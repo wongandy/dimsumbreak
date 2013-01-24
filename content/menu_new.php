@@ -20,7 +20,6 @@
 
 		while ($item = mysql_fetch_assoc($query)) {
 			if ($item['Type'] != $last_type) {
-				$last_type = $item['Type'];
 				echo "<div class = 'menu_column" . $i%2 . "'>";
 				echo "<div class = 'menu_list'>";
 				echo "<table>";
@@ -33,9 +32,10 @@
 			echo "</tr>";
 			
 			if ($item['Type'] != $last_type) {
+				$last_type = $item['Type'];
 				echo "</table>";
 				echo "</div>";
-
+				
 				echo "<div class = 'menu_images'>";
 				echo "<img src = 'images/{$item['Type']}' />";
 				echo "</div>";
