@@ -16,6 +16,8 @@
 		$query = mysql_query("SELECT * FROM menu_items SORT BY Type ASC LIMIT 0, 10");
 		$last_type = "";
 
+		$i = 0;
+
 		while ($item = mysql_fetch_assoc($query)) {
 			if ($item['Type'] != $last_type) {
 				$last_type = $item['Type'];
@@ -38,6 +40,9 @@
 				echo "<img src = 'images/{$item['Type']}' />";
 				echo "</div>";
 			}
+			
+			// increment $i
+			$i++;
 		}
 ?>
 </div> <!-- end div menu -->
